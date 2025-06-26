@@ -1,38 +1,43 @@
 // App.tsx
-import 'react-native-gesture-handler'; // React Navigationを使用する場合、エントリポイントの最初にインポート
+import 'react-native-gesture-handler';
 
 import React from 'react';
 import { StatusBar } from 'react-native';
-import { ThemeProvider, useTheme } from './src/theme/ThemeProvider'; // 作成したテーマプロバイダーをインポート
+import { ThemeProvider, useTheme } from './src/theme/ThemeProvider';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-// ページコンポーネントをインポート
 import { LoginScreen } from './src/pages/Login';
-import { HomeScreen } from './src/pages/Home';
+import { HomeScreen } from './src/pages/Home'; // Home画面がメインとなる
+import { AuthProvider } from './src/contexts/AuthContext'; // AuthProviderをインポート
+import { AdminModeScreen } from './src/pages/AdminModeScreen';
+import { DeveloperModeScreen } from './src/pages/DeveloperModeScreen';
+import { InternalModeScreen } from './src/pages/InternalModeScreen';
 
-// Stack Navigator を作成
+
 const Stack = createNativeStackNavigator();
 
 const ThemedAppContent: React.FC = () => {
   const theme = useTheme();
 
   return (
-    // NavigationContainer でアプリ全体をラップ
     <NavigationContainer>
       <StatusBar barStyle="light-content" backgroundColor={theme.colors.primaryBackground} />
       <Stack.Navigator
-        initialRouteName="Login" // アプリ起動時に最初に表示する画面
+        initialRouteName="/" // ★変更: アプリ起動時に最初に表示する画面をHomeに変更
         screenOptions={{
-          headerShown: false, // 各画面のヘッダーを非表示にする（カスタムヘッダーを実装する場合）
+          headerShown: false,
           contentStyle: {
-            backgroundColor: theme.colors.primaryBackground, // 画面背景色をテーマから取得
+            backgroundColor: theme.colors.primaryBackground,
           },
         }}
       >
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
-        {/* 他の画面もここに追加 */}
+        <Stack.Screen name="/" component={HomeScreen} />
+        <Stack.Screen name="/login" component={LoginScreen} />
+        {/* 各モードの画面をスタックに追加 */}
+        <Stack.Screen name="AdminModeScreen" component={AdminModeScreen} />
+        <Stack.Screen name="DeveloperModeScreen" component={DeveloperModeScreen} />
+        <Stack.Screen name="InternalModeScreen" component={InternalModeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -41,7 +46,9 @@ const ThemedAppContent: React.FC = () => {
 export default function App() {
   return (
     <ThemeProvider>
-      <ThemedAppContent />
+      <AuthProvider>
+        <ThemedAppContent />
+      </AuthProvider>
     </ThemeProvider>
   );
 }
