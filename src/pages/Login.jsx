@@ -61,7 +61,7 @@ function Login() {
 
   return (
     <div className="min-h-[calc(100vh-16rem)] flex items-center justify-center bg-background-dark text-text-light p-4">
-      <div className="bg-gray-800 p-8 rounded-lg w-full max-w-md">
+      <div className=" p-8 rounded-lg w-full max-w-md">
         <h2 className="text-3xl font-bold mb-6 text-center text-accent-pastel">ログイン</h2>
         {error && <p className="text-red-500 text-center mb-4">{error}</p>}
         {message && <p className="text-green-500 text-center mb-4">{message}</p>}
