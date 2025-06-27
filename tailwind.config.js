@@ -12,8 +12,7 @@ export default {
         'accent-pastel': '#d0e0ed', // パステルカラー（紙みたいな少し暗めの）
       },
       fontFamily: {
-        'inter': ['Inter', 'sans-serif'],
-        'noto-sans-jp': ['Noto Sans JP', 'sans-serif'],
+        'm-plus-rounded-1c': ['M PLUS Rounded 1c', 'sans-serif'],
       }
     },
   },
