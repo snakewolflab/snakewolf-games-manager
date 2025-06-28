@@ -1,32 +1,48 @@
-npm install react-router-dom styled-components
+@echo off
+setlocal
 
-mkdir -p src/components
-touch src/components/Header.js
-touch src/components/Footer.js
+echo.
+echo === •K—v‚ÈƒtƒHƒ‹ƒ_‚Æƒtƒ@ƒCƒ‹‚Ìì¬’† ===
 
-mkdir -p src/pages
-touch src/pages/Home.js
-touch src/pages/Login.js
-touch src/pages/Register.js
-touch src/pages/GameDetail.js
-touch src/pages/Search.js
-touch src/pages/Settings.js
-touch src/pages/DeveloperPortal.js
-touch src/pages/GoogleAnalyticsPortal.js
-touch src/pages/AdminPortal.js
+:: Šù‘¶‚ÌsrcƒtƒHƒ‹ƒ_‚ª‚ ‚é‚±‚Æ‚ğ‘O’ñ‚Æ‚µ‚Ü‚·
 
-touch src/pages/Library.js
-touch src/pages/DownloadStatus.js
-touch src/pages/Checkout.js
-touch src/pages/Update.js
-touch src/pages/ServiceMonitor.js
-touch src/pages/GameError.js
+:: src/components ƒtƒHƒ‹ƒ_“à‚É Header.js ‚Æ Footer.js ‚ğì¬
+mkdir src\components >nul 2>&1
+type nul > src\components\Header.js
+type nul > src\components\Footer.js
 
-mkdir -p src/styles
-touch src/styles/GlobalStyles.js
+:: src/pages ƒtƒHƒ‹ƒ_“à‚ÉŠeƒy[ƒWƒtƒ@ƒCƒ‹‚ğì¬
+mkdir src\pages >nul 2>&1
+type nul > src\pages\Home.js
+type nul > src\pages\Login.js
+type nul > src\pages\Register.js
+type nul > src\pages\GameDetail.js
+type nul > src\pages\Search.js
+type nul > src\pages\Settings.js
+type nul > src\pages\DeveloperPortal.js
+type nul > src\pages\GoogleAnalyticsPortal.js
+type nul > src\pages\AdminPortal.js
 
-touch src/App.js
-touch src/index.js
+:: Electron‰»‚É’Ç‰Á‚·‚éƒy[ƒW—pƒtƒ@ƒCƒ‹
+type nul > src\pages\Library.js
+type nul > src\pages\DownloadStatus.js
+type nul > src\pages\Checkout.js
+type nul > src\pages\Update.js
+type nul > src\pages\ServiceMonitor.js
+type nul > src\pages\GameError.js
 
-echo "Reactãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆ 'snakewolf-games-manager' ã®åŸºæœ¬ãƒ•ã‚©ãƒ«ãƒ€ã¨ãƒ•ã‚¡ã‚¤ãƒ«ãŒä½œæˆã•ã‚Œã¾ã—ãŸã€‚"
-echo "ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã«ç§»å‹•ã—ã¦é–‹ç™ºã‚’é–‹å§‹ã—ã¦ãã ã•ã„: npm run dev"
+:: src/styles ƒtƒHƒ‹ƒ_“à‚É GlobalStyles.js ‚ğì¬
+mkdir src\styles >nul 2>&1
+type nul > src\styles\GlobalStyles.js
+
+:: src ’¼‰º‚Ì App.js ‚Æ index.js ‚Ícreate-react-app‚ÅŠù‚É‘¶İ‚·‚é‚½‚ßA
+:: ‚±‚±‚Å‚Í–¾¦“I‚Éì¬‚¹‚¸AŠù‘¶‚Ìƒtƒ@ƒCƒ‹‚ğ‚»‚Ì‚Ü‚Üg—p‚µ‚Ü‚·B
+
+echo.
+echo ======================================================
+echo •K—v‚ÈƒtƒHƒ‹ƒ_‚Æ‹ó‚Ìƒy[ƒWƒtƒ@ƒCƒ‹‚ªì¬‚³‚ê‚Ü‚µ‚½B
+echo ‚±‚ê‚ç‚Ìƒtƒ@ƒCƒ‹‚ÉƒRƒ“ƒeƒ“ƒc‚ğ’Ç‰Á‚µ‚ÄŠJ”­‚ği‚ß‚Ä‚­‚¾‚³‚¢B
+echo ======================================================
+
+endlocal
+pause
