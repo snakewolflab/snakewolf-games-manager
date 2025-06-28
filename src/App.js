@@ -9,6 +9,7 @@ import Settings from './pages/Settings';
 import DeveloperPortal from './pages/DeveloperPortal';
 import AnalyticsPortal from './pages/AnalyticsPortal';
 import AdminPortal from './pages/AdminPortal';
+import AccountManager from './pages/AccountManager';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Route path="/developer" element={<DeveloperPortal />} />
       <Route path="/analytics" element={<AnalyticsPortal />} />
       <Route path="/admin" element={<AdminPortal />} />
+      <Route path='/account' element={<AccountManager />} />
     </Routes>
   );
 }

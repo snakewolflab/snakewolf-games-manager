@@ -54,7 +54,9 @@ button:disabled {
   cursor: not-allowed;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   font-family: var(--font-main);
   background-color: #2f343a;
   color: var(--text-color);
@@ -63,8 +65,41 @@ input, select, textarea {
   border-radius: 4px;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
   border-color: var(--accent-blue);
   box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid #fdfcfd;
+  /* 外枠 */
+}
+
+table th {
+  border-style: solid dotted;
+  /* 線種 */
+  border-width: 2px;
+  /* 線の太さ */
+  border-color: #fdfcfd;
+  /* 線色 */
+  padding: 5px;
+}
+
+table td {
+  border-style: solid dotted;
+  /* 線種 */
+  border-width: 2px;
+  /* 線の太さ */
+  border-color: #fdfcfd;
+  /* 線色 */
+  padding: 5px;
+}
+
+.blur {
+  -ms-filter: blur(6px);
+	filter: blur(6px);
 }
