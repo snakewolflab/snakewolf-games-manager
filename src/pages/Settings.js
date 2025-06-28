@@ -83,7 +83,7 @@ function SettingsPage() {
   return (
     <Layout>
       <h1>プロフィール設定</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='center'>
         <input
           type="text"
           placeholder="ディスプレイネーム"
@@ -106,7 +106,7 @@ function SettingsPage() {
           required
         />
         <div className='center' style={{ margin: '10px' }}>
-          <div style={{ display: 'flex', gap: '10px', margin: '10px 0', maxWidth: '600px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '10px', margin: '10px 0', maxWidth: '310px', flexWrap: 'wrap' }}>
             {predefinedIcons.map((icon, idx) => (
               <img
                 key={idx}
