@@ -13,19 +13,17 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/game/:id" element={<GameDetail />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/developer" element={<DeveloperPortal />} />
-        <Route path="/analytics" element={<AnalyticsPortal />} />
-        <Route path="/admin" element={<AdminPortal />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/game/:id" element={<GameDetail />} />
+      <Route path="/search" element={<Search />} />
+      <Route path="/settings" element={<Settings />} />
+      <Route path="/developer" element={<DeveloperPortal />} />
+      <Route path="/analytics" element={<AnalyticsPortal />} />
+      <Route path="/admin" element={<AdminPortal />} />
+    </Routes>
   );
 }
 

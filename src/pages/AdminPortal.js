@@ -1,4 +1,9 @@
+import Layout from '../components/Layout';
 function AdminPortal() {
-  return <div>アドミンポータル</div>;
+  return (
+    <Layout>
+      <div>アドミンポータル</div>
+    </Layout>
+  );
 }
 export default AdminPortal;

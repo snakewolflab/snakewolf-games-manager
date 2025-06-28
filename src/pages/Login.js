@@ -1,4 +1,9 @@
+import Layout from '../components/Layout';
 function LoginPage() {
-  return <div>ログインページ</div>;
+  return (
+    <Layout>
+      <div>ログインページ</div>
+    </Layout>
+  );
 }
 export default LoginPage;

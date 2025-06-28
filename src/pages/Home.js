@@ -1,4 +1,9 @@
+import Layout from '../components/Layout';
 function HomePage() {
-  return <div>ホームページ</div>;
+  return (
+    <Layout>
+      <div>ホームページ</div>
+    </Layout>
+  );
 }
 export default HomePage;

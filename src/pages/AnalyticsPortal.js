@@ -1,4 +1,9 @@
+import Layout from '../components/Layout';
 function AnalyticsPortal() {
-  return <div>アナリティクスポータル</div>;
+  return (
+    <Layout>
+      <div>アナリティクスポータル</div>
+    </Layout>
+  );
 }
 export default AnalyticsPortal;
