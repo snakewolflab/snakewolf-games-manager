@@ -22,7 +22,7 @@ const AppContainer = styled.div`
 `;
 
 const MainContent = styled.main`
-  flex-grow: 1; /* コンテンツが少ない場合でもフッターを下に固定 */
+  flex-grow: 1; /* コンテンツが少ない場合でもフッターを下に固定(Footer.jsでも同じような処理をしています) */
 `;
 
 function App() {
