@@ -1,0 +1,58 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper function to check if a user has a specific role
+    // ユーザーが特定のロールを持っているかチェックするヘルパー関数
+    function hasRole(role) {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == role;
+    }
+
+    // Helper function to check if a user has any of the specified roles
+    // ユーザーが指定されたいずれかのロールを持っているかチェックするヘルパー関数
+    // usersコレクションの 'role' フィールドが単一の文字列（例: "admin"）の場合
+		function hasAnyRole(roles) {
+  		// `roles` という配列に、ユーザーの単一のロールが含まれているかをチェックします
+      return request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in roles;
+		}
+    
+    match /users/{userId} {
+      // ログインユーザーは読み取り可能
+      allow read: if request.auth != null;
+      // 自身のドキュメントのみ作成・更新可能
+      allow create, update: if request.auth != null && request.auth.uid == userId;
+      // 管理者は他のユーザーのドキュメントを更新可能
+      allow update: if request.auth != null && hasRole('admin'); // ヘルパー関数を使用
+      // 削除は不可
+      allow delete: if false;
+    }
+
+    match /games/{gameId} {
+      // 全員読み取り可能
+      allow read: if true;
+      // 作成は 'developer' または 'admin' ロールのみ
+      allow create: if request.auth != null && hasAnyRole(['developer', 'admin']); // hasAnyRole を使用
+      // 更新はゲームの所有者（developerId）か 'admin' ロールのみ
+      allow update: if request.auth != null && (resource.data.developerId == request.auth.uid || hasRole('admin'));
+      // 削除は 'admin' ロールのみ
+      allow delete: if request.auth != null && hasRole('admin');
+    }
+
+    match /gameProgress/{progressId} {
+      // 読み取りは、関連する開発者、または 'admin'/'employee' ロールのみ
+      // 注意: resource.data.developerId が存在し、それがリクエストユーザーのUIDに一致する場合。
+      // もしくは、adminまたはemployeeロールを持つ場合。
+      allow read: if request.auth != null &&
+                      (resource.data.developerId == request.auth.uid || hasAnyRole(['admin', 'developer'])); // hasAnyRole を使用
+      // 作成・更新は、リクエストデータ内の developerId がユーザーIDに一致するか、'admin' ロールのみ
+      // create: 新しく作成されるドキュメントの developerId と request.auth.uid を比較
+      // update: 既存のドキュメントの developerId と request.auth.uid を比較
+      allow create: if request.auth != null &&
+                       (request.resource.data.developerId == request.auth.uid || hasRole('admin'));
+      allow update: if request.auth != null &&
+                       (resource.data.developerId == request.auth.uid || hasAnyRole(['admin', 'developer'])); // 更新時は resource.data を使用
+      // 削除は 'admin' ロールのみ
+      allow delete: if request.auth != null && hasRole('admin');
+    }
+  }
+}    

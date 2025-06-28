@@ -10,6 +10,8 @@ import DeveloperPortal from './pages/DeveloperPortal';
 import AnalyticsPortal from './pages/AnalyticsPortal';
 import AdminPortal from './pages/AdminPortal';
 import AccountManager from './pages/AccountManager';
+import UserEdit from './pages/UserEdit';
+import GameManager from './pages/GameManager';
 import './App.css';
 
 function App() {
@@ -23,8 +25,9 @@ function App() {
       <Route path="/settings" element={<Settings />} />
       <Route path="/developer" element={<DeveloperPortal />} />
       <Route path="/analytics" element={<AnalyticsPortal />} />
-      <Route path="/admin" element={<AdminPortal />} />
-      <Route path='/account' element={<AccountManager />} />
+      <Route path='/admin' element={<AccountManager />} />
+      <Route path='/admin/user/:uid' element={<UserEdit />} />
+      <Route path='/game/manager' element={<GameManager />} />
     </Routes>
   );
 }
