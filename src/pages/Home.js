@@ -27,10 +27,9 @@ const Section = styled.section`
   width: 100%;
   max-width: 1200px;
   margin-bottom: 60px;
-  background-color: #2e343b;
+  background-color: #262a2f;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 `;
 
 const SectionTitle = styled.h2`

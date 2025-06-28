@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
 
   :root {
     /* テーマ色 */
@@ -26,7 +26,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
     background-color: var(--theme-bg-color);
     color: var(--theme-text-color);
     line-height: 1.6;
@@ -47,7 +49,9 @@ const GlobalStyles = createGlobalStyle`
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
     font-weight: 700;
     transition: background-color 0.3s ease;
     &:hover {
@@ -67,7 +71,9 @@ const GlobalStyles = createGlobalStyle`
     border: 1px solid #5a626b;
     padding: 10px;
     border-radius: 5px;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
     &:focus {
       outline: none;
       border-color: var(--accent-blue);
