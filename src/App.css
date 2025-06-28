@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap');
+
+:root {
+  --bg-color: #262a2f;
+  --text-color: #fdfcfd;
+  --accent-red: #ff8c94;
+  --accent-orange: #e67e22;
+  --accent-blue: #3498bd;
+  --accent-green: #2ecc71;
+  --accent-yellow: #f1c40f;
+  --disabled-color: #7f8c8d;
+  --font-main: 'M PLUS Rounded 1c', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a:hover {
+  text-decoration: underline;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  font-family: var(--font-main);
+  background-color: var(--accent-blue);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  background-color: var(--accent-green);
+}
+
+button:disabled {
+  background-color: var(--disabled-color);
+  cursor: not-allowed;
+}
+
+input, select, textarea {
+  font-family: var(--font-main);
+  background-color: #2f343a;
+  color: var(--text-color);
+  border: 1px solid #444;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.3);
 }
