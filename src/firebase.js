@@ -23,9 +23,9 @@ const analytics = getAnalytics(app);
 
 // 開発環境でのみエミュレーターに接続
 // 本番環境にデプロイする際は、これらの行をコメントアウトするか削除してください
-if (window.location.hostname === "localhost") {
-  connectAuthEmulator(auth, "http://127.0.0.1:9099"); // Auth エミュレーター
-  connectFirestoreEmulator(db, '127.0.0.1', 8080); // Firestore エミュレーター
-}
+// if (window.location.hostname === "localhost") {
+//   connectAuthEmulator(auth, "http://127.0.0.1:9099"); // Auth エミュレーター
+//   connectFirestoreEmulator(db, '127.0.0.1', 8080); // Firestore エミュレーター
+// }
 
 export { auth, db, analytics };

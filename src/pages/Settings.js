@@ -105,22 +105,24 @@ function SettingsPage() {
           onChange={(e) => setPin(e.target.value)}
           required
         />
-        <div style={{ display: 'flex', gap: '10px', margin: '10px 0' }}>
-          {predefinedIcons.map((icon, idx) => (
-            <img
-              key={idx}
-              src={icon}
-              alt="icon"
-              width={50}
-              height={50}
-              style={{
-                borderRadius: '50%',
-                border: photoURL === icon ? '2px solid var(--accent-blue)' : '2px solid transparent',
-                cursor: 'pointer',
-              }}
-              onClick={() => setPhotoURL(icon)}
-            />
-          ))}
+        <div className='center' style={{ margin: '10px' }}>
+          <div style={{ display: 'flex', gap: '10px', margin: '10px 0', maxWidth: '600px', flexWrap: 'wrap' }}>
+            {predefinedIcons.map((icon, idx) => (
+              <img
+                key={idx}
+                src={icon}
+                alt="icon"
+                width={50}
+                height={50}
+                style={{
+                  borderRadius: '50%',
+                  border: photoURL === icon ? '2px solid var(--accent-blue)' : '2px solid transparent',
+                  cursor: 'pointer',
+                }}
+                onClick={() => setPhotoURL(icon)}
+              />
+            ))}
+          </div>
         </div>
         <button type="submit">保存</button>
         {message && <p>{message}</p>}
