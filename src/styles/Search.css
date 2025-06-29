@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Google+Sans:100,300,400,500,700,900,100i,300i,400i,500i,700i,900i");
+
+.kyc-search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 550px;
+    border-radius: 30px;
+    margin: 5px;
+    border: solid 1px #dcdcdc;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+    
+.kyc-search-box{
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: rgba(0,0,0,0);
+}
+
+i.kyc-search-mark{
+    margin-left: 10px;
+    margin-right: 5px;
+    color: #9aa0a6;
+}
+
+i.kyc-search-mic{
+    margin-right: 10px;
+    cursor: pointer;
+    color: #9aa0a6;
+}
+
+@media only screen and (max-width:480px){
+    .kyc-search-bar{
+        width: 90%;
+    }
+}

@@ -1,3 +1,5 @@
+// src/components/layout/Layout.js
+import { useState } from 'react';
 import Sidebar from '../ui/Sidebar';
 import './Layout.css';
 

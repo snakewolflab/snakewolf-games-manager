@@ -1,22 +1,28 @@
 // src/components/ui/Sidebar.js
 import { Link, useLocation } from 'react-router-dom';
 import './Sidebar.css';
+import {
+  MdAnalytics, MdDeveloperMode, MdAdminPanelSettings,
+  MdOutlineSettings, MdOutlineSearch, MdHome
+} from "react-icons/md";
 
 const menuItems = [
-  { label: 'ホーム', path: '/' },
-  { label: '検索', path: '/search' },
-  { label: '設定', path: '/settings' },
-  { label: '開発ポータル', path: '/developer' },
-  { label: 'アナリティクス', path: '/analytics' },
-  { label: '管理者ポータル', path: '/admin' },
+  { label: <MdHome />, path: '/' },
+  { label: <MdOutlineSearch />, path: '/search' },
+  { label: <MdOutlineSettings />, path: '/settings' },
+  { label: <MdDeveloperMode />, path: '/developer' },
+  { label: <MdAnalytics />, path: '/analytics' },
+  { label: <MdAdminPanelSettings />, path: '/admin' },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen }) {
   const { pathname } = useLocation();
 
   return (
-    <div className="sidebar">
-      <div className="sidebar-logo">SnakeWolf Platform</div>
+    <div className={`sidebar ${isOpen ? 'open' : ''}`}>
+      <div className="sidebar-logo">
+        <img src='/assets/logo.png' width={40} height={40} alt="logo" />
+      </div>
       <nav>
         {menuItems.map(item => (
           <Link

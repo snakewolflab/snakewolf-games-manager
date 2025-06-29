@@ -2,13 +2,21 @@
 .layout {
   display: flex;
   height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 .main-content {
-  margin-left: 220px; /* Sidebar width */
-  padding: 2rem;
+  margin-left: 72px;
+  padding: 1.5rem;
   overflow-y: auto;
-  width: 100%;
+  width: calc(100% - 72px);
   background-color: var(--bg);
   color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
 }
