@@ -1,0 +1,13 @@
+/* src/components/layout/Header.css */
+.header {
+  background: #1e2124;
+  color: var(--text);
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--gray);
+}
+
+.logo {
+  color: var(--blue);
+}

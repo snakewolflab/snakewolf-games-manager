@@ -1,0 +1,14 @@
+/* src/components/layout/Layout.css */
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  margin-left: 220px; /* Sidebar width */
+  padding: 2rem;
+  overflow-y: auto;
+  width: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+}

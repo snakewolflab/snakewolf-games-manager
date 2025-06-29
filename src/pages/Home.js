@@ -1,9 +1,11 @@
-import Layout from '../components/Layout';
-function HomePage() {
+// Homeページ例（src/pages/Home.js）
+import Layout from '../components/layout/Layout';
+
+export default function Home() {
   return (
     <Layout>
-      <div>ホームページ</div>
+      <h1>ホーム</h1>
+      <p>ようこそ SnakeWolf Platform へ。</p>
     </Layout>
   );
 }
-export default HomePage;

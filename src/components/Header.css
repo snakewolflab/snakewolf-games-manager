@@ -1,24 +1,90 @@
+/* src/components/Header.css */
+
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  background-color: #1f2328;
-  color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #282c34;
+    color: white;
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--accent-yellow);
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
-.nav a, .account a {
-  margin: 0 8px;
-  color: var(--text-color);
-  text-decoration: none;
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
 }
 
-.nav a:hover, .account a:hover {
-  color: var(--accent-blue);
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+}
+
+.account-info {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Spacing between coin, avatar, and logout button */
+    /* Add position relative to account-info or avatar-container to position the badge */
+}
+
+.account-info span {
+    font-size: 1.1em;
+}
+
+.account a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.account a:hover {
+    text-decoration: underline;
+}
+
+.account button {
+    background-color: #61dafb;
+    color: #282c34;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-left: 15px;
+}
+
+.account button:hover {
+    opacity: 0.9;
+}
+
+/* New styles for avatar and badge */
+.avatar-container {
+    position: relative; /* This is crucial for positioning the badge */
+    width: 36px; /* Match avatar width */
+    height: 36px; /* Match avatar height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-container img:first-child { /* The avatar image */
+    border-radius: 50%;
+}
+
+.batch-icon {
+    position: absolute;
+    bottom: 0px; /* Adjust as needed to position the badge */
+    right: 0px; /* Adjust as needed to position the badge */
+    border: 1px solid none; /* Optional: adds a small border around the badge */
+    border-radius: 50%;
+    background-color: none; /* Optional: background for the badge if it has transparent parts */
+    box-shadow: 0 0 3px rgba(0,0,0,0.3); /* Optional: adds a subtle shadow */
 }

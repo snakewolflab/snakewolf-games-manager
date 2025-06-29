@@ -21,7 +21,9 @@
 }
 
 .center input,
-.center button {
+.center button,
+.center select,
+.center textarea {
   max-width: 500px;
   width: 100%;
   margin: 5px;

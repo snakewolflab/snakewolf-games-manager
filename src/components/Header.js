@@ -10,16 +10,21 @@ import './Header.css';
 function Header() {
   const { user, role } = useAuth();
   const [coin, setCoin] = useState(0);
+  const [batch, setBatch] = useState('none'); // Add state for batch
 
   useEffect(() => {
-    const fetchCoin = async () => {
+    const fetchUserData = async () => {
       if (user) {
         const ref = doc(db, 'users', user.uid);
         const snap = await getDoc(ref);
-        if (snap.exists()) setCoin(snap.data().coin || 0);
+        if (snap.exists()) {
+          const userData = snap.data();
+          setCoin(userData.coin || 0);
+          setBatch(userData.batch || 'none'); // Set batch state
+        }
       }
     };
-    fetchCoin();
+    fetchUserData();
   }, [user]);
 
   const handleLogout = () => {
@@ -27,6 +32,22 @@ function Header() {
   };
 
   const showLink = (roles) => !roles || roles.includes(role);
+
+  // Function to determine batch image source
+  const getBatchImageSrc = (batchType) => {
+    switch (batchType) {
+      case 'common':
+        return '/assets/batch/common.png';
+      case 'official':
+        return '/assets/batch/official.png';
+      case 'education':
+        return '/assets/batch/education.png';
+      case 'company':
+        return '/assets/batch/company.png';
+      default:
+        return '/assets/batch/none.png';
+    }
+  };
 
   return (
     <header className="header">
@@ -43,13 +64,24 @@ function Header() {
         {user ? (
           <div className="account-info">
             <span>{coin} 🪙</span>
-            <img
-              src={user.photoURL || '/avatars/default.png'}
-              alt="avatar"
-              width={36}
-              height={36}
-              style={{ borderRadius: '50%' }}
-            />
+            <div className="avatar-container"> {/* New div to contain avatar and badge */}
+              <img
+                src={user.photoURL || '/avatars/default.png'}
+                alt="avatar"
+                width={36}
+                height={36}
+                style={{ borderRadius: '50%' }}
+              />
+              {batch !== 'none' && ( // Only render badge if it's not 'none'
+                <img
+                  src={getBatchImageSrc(batch)}
+                  alt="batch"
+                  width={16} // Increased size slightly for better visibility
+                  height={16} // Increased size slightly for better visibility
+                  className="batch-icon"
+                />
+              )}
+            </div>
             <button onClick={handleLogout}>ログアウト</button>
           </div>
         ) : (
