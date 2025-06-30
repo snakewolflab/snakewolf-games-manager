@@ -1,0 +1,21 @@
+/* TopBar */
+.topbar {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: #2b2d31;
+  border-bottom: 1px solid #1e1f22;
+  color: #fdfcfd;
+}
+
+.topbar-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 1rem;
+}

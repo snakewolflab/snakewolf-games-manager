@@ -1,0 +1,78 @@
+/* SubSidebar.css */
+.subsidebar {
+  flex: 1;
+  padding: 1rem 0.5rem;
+  overflow-y: auto;
+  color: #fdfcfd;
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.friend-search {
+  background: #1e1f22;
+  border: 1px solid #444;
+  color: #fdfcfd;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  margin: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #999;
+  margin: 0.75rem 0 0.25rem 0.5rem;
+}
+
+.friend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.friend-item:hover {
+  background-color: #3a3c41;
+}
+
+.friend-item.online .friend-avatar {
+  background-color: #2ecc71;
+}
+
+.friend-item.offline .friend-avatar {
+  background-color: #7f8c8d;
+}
+
+.friend-avatar {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.friend-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.friend-modal-content {
+  background: #2f3136;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  color: #fdfcfd;
+  max-width: 300px;
+  text-align: center;
+}

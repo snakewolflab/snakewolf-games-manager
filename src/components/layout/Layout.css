@@ -1,22 +1,38 @@
-/* src/components/layout/Layout.css */
+.layout-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #313338;
+  overflow: hidden;
+}
+
 .layout {
   display: flex;
   height: 100vh;
-  background-color: var(--bg);
+  background-color: #313338;
   color: var(--text);
+}
+
+.subsidebar-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  background-color: #2b2d31;
+  border-right: 1px solid #1e1f22;
+}
+
+.layout-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .main-content {
-  margin-left: 72px;
-  padding: 1.5rem;
+  flex: 1;
+  padding: 1rem;
   overflow-y: auto;
-  width: calc(100% - 72px);
-  background-color: var(--bg);
+  background-color: #313338;
   color: var(--text);
-}
-
-@media (max-width: 768px) {
-  .main-content {
-    margin-left: 0;
-  }
+  font-family: var(--font);
 }

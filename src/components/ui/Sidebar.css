@@ -2,14 +2,14 @@
 /* src/components/ui/Sidebar.css に対応 */
 .sidebar {
   width: 72px;
-  height: 100vh;
+  height: 100%;
   background-color: #1e1f22;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0.5rem 0;
   position: fixed;
-  top: 0;
+  top: 48px;
   left: 0;
   z-index: 1000;
 }
